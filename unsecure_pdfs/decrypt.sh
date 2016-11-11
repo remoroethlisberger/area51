@@ -4,7 +4,9 @@
 ## DATE: 11.11.2016
 
 var="_dec.pdf"
-password="rating"
+
+echo "Please enter the password, which was used to encrypt the .pdf files"
+read password
 
 for file in *.pdf
 do
