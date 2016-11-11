@@ -3,14 +3,13 @@
 ## AUTHOR: Remo Röthlisberger
 ## DATE: 11.11.2016
 
-var="_dec.pdf"
-
 echo "Please enter the password, which was used to encrypt the .pdf files"
 read password
 
 for file in *.pdf
 do
 		echo "Processing $file ...";
-    	qpdf --password="$password" --decrypt "$file" "$file$var";
+		var=${file%.pdf}"_dec.pdf"
+    	qpdf --password="$password" --decrypt "$file" "$var";
     	rm "$file";
 done
